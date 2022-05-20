@@ -1,0 +1,36 @@
+.portfolio__filter {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.filter__btn {
+    padding: 6px 22px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.03em;
+    background-color: var(--background-light-color);
+    color: var(--title-color);
+
+    transition: background-color var(--trans-duration) var(--trans-func),
+        box-shadow var(--trans-duration) var(--trans-func),
+        color var(--trans-duration) var(--trans-func);
+    
+    &:hover,
+    &:focus{
+        background-color: var(--accent-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+            0px 1px 2px rgba(0, 0, 0, 0.08),
+            0px 2px 2px rgba(0, 0, 0, 0.12);
+        color: var(--text-light-color);
+    }
+}
+
+.filter__item{
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+}

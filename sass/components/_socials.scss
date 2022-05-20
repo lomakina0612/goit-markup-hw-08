@@ -1,0 +1,40 @@
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social--join {
+    justify-content: start;
+}
+
+.social__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    transition: background-color var(--trans-duration) var(--trans-func),
+        fill var(--trans-duration) var(--trans-func);
+    
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        fill: var(--text-light-color);
+    }
+}
+
+.social__link--team {
+    fill: var(--icon-color);
+}
+
+.social__link--join {
+    background-color: var(--join-link-bg-color);
+    fill: var(--footer-color);
+}
+
