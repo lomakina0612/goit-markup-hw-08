@@ -3,14 +3,22 @@
 }
 
 .hero__container {
-    max-width: 1600px;
+    width: 100%;   
     margin: 0 auto;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), 
+        rgba(47, 48, 58, 0.4)), 
+        url(../images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 200px 0;
+    
     text-align: center;
+
+    @include media($desktop) {
+        max-width: 1600px;
+        padding: 200px 0;            
+    }
 }
 
 .hero__title {

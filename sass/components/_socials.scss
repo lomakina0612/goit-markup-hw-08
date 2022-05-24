@@ -4,7 +4,11 @@
 }
 
 .social--join {
-    justify-content: start;
+    
+    @include media($desktop) {
+        justify-content: start;
+    }
+    
 }
 
 .social__item:not(:last-child) {

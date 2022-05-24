@@ -1,10 +1,32 @@
+
 .clients__list {
     display: flex;
+    flex-wrap: wrap;
+
+    margin: -15px;
+
+    @include media($desktop) {
+        flex-wrap: nowrap;
+    }
 }
 
-.clients__itom {
-    &:not(:last-child){
-        margin-right: 30px;
+.clients__item {
+    margin: 15px;
+    
+    width: calc((100% - 2 * 30px) / 2);
+
+    // @include media($tablet) {
+    //     flex-basis: calc((100% - 6 * 15px) / 3);
+    // }
+
+    @include media($tablet) {
+        // max-width: 226px;
+        width: calc((100% - 3 * 30px) / 3);
+    }
+
+    @include media($desktop) {
+        // max-width: 170px;
+        width: calc((100% - 6 * 30px) / 6);
     }
 }
 
@@ -12,8 +34,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 170px;
+
+    min-width: 110px;
+    
+    // width: calc((100% - 2 * 30px) / 2);
+    // max-width: 210px;
     height: 92px;
+
     border: 1px solid var(--icon-color);
     border-radius: 4px;
     color: var(--icon-color);
@@ -26,6 +53,7 @@
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
     }
+
 }
 
 .clients__icon {
