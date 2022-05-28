@@ -4,17 +4,14 @@
     margin: 0 auto;
 
     @include media($mobile) {
-        max-width: $mobile;
-        background-color: tomato;
+        max-width: $mobile;       
     }
 
     @include media($tablet) {
-        max-width: $tablet;
-        background-color: yellowgreen;
+        max-width: $tablet;        
     }
     
     @include media($desktop) {
-        max-width: $desktop;
-        background-color: lightblue;
+        max-width: $desktop;        
     }
 }

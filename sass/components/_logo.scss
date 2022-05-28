@@ -6,7 +6,7 @@
     letter-spacing: 0.03em;
     color: var(--accent-color);
 
-    @include media($desktop) {
+    @include media($desktop) {           
             font-size: 26px;
             line-height: 1.19;
         }
@@ -14,6 +14,7 @@
 
 .logo--header {
     color: var(--logo-header-color);
+    
 }
 
 .logo--footer {
