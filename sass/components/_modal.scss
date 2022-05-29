@@ -8,7 +8,7 @@ body.modal-open{
     width: calc(100vw - 30px);
     max-height: 609px;
     height: 100%;   
-    overflow-y: scroll;
+    overflow-y: auto;
 
     @include media ($mobile) {
         width: 450px; 
@@ -18,15 +18,8 @@ body.modal-open{
         transform: translate(-50%, -50%) scale(1) rotate(0);
     }
 
-    @include media ($tablet) {
-        
-        
-        
-    }
-
     @include media ($desktop) {       
-        width: 528px;
-        
+        width: 528px;        
     }
     
     padding: 40px;

@@ -1107,7 +1107,7 @@ body.modal-open {
   width: calc(100vw - 30px);
   max-height: 609px;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 40px;
   box-sizing: border-box;
   background: var(--background-white-color);
@@ -1240,8 +1240,13 @@ body.modal-open {
 
 .check__field {
   display: block;
-  padding-left: 12px;
   margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+  .check__field {
+    padding-left: 12px;
+  }
 }
 
 .check__custom {

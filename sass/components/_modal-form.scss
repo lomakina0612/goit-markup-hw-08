@@ -74,9 +74,11 @@
 
 .check__field {
     display: block;
-
-    padding-left: 12px;
     margin-bottom: 30px;
+
+    @include media ($desktop) {
+        padding-left: 12px;
+    }
 }
 
 .check__custom {
