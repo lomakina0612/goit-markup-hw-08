@@ -168,7 +168,8 @@ button {
   top: 0;
   left: 0;
   background-color: var(--background-white-color);
-  transform: translateX(100%);
+  transform: translateX(110%);
+  z-index: 1;
 }
 
 .menu__container.is-open {
@@ -201,6 +202,12 @@ button {
   justify-content: space-between;
   padding: 48px 40px 38px;
   height: 100%;
+}
+
+@media screen and (max-width: 375px) {
+  .mobile-menu {
+    padding: 20px;
+  }
 }
 
 .mob-contacts__list {
@@ -908,8 +915,35 @@ button {
 
 .portfolio__filter {
   display: flex;
-  margin-bottom: 50px;
-  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio__filter {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__filter {
+    margin-bottom: 50px;
+  }
+}
+
+.filter__item {
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .filter__item {
+    margin-bottom: 0;
+  }
+}
+
+.filter__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .filter__btn {
@@ -930,23 +964,38 @@ button {
   color: var(--text-light-color);
 }
 
-.filter__item:not(:last-child) {
-  margin-right: 8px;
+.portfolio__grid {
+  margin: -15px;
 }
 
-.portfolio__grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: -30px;
-  margin-left: -30px;
+@media screen and (min-width: 768px) {
+  .portfolio__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .grid__item {
-  margin-top: 30px;
-  margin-left: 30px;
-  width: 370px;
-  height: 404px;
+  margin: 15px;
   background-color: var(--background-white-color);
+}
+
+@media screen and (min-width: 480px) {
+  .grid__item {
+    width: var(--mobile-item-width);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid__item {
+    width: calc(100%/2 - 30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid__item {
+    width: calc(100%/3 - 30px);
+  }
 }
 
 .grid__link {
@@ -982,10 +1031,6 @@ button {
   letter-spacing: 0.03em;
 }
 
-.grid__img {
-  display: block;
-}
-
 .img-wrap {
   position: relative;
   overflow: hidden;
@@ -1001,7 +1046,7 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(100%);
+  transform: translateY(105%);
   transition-property: transform;
   transition-duration: var(--trans-duration);
   transition-timing-function: var(--trans-func);
@@ -1027,12 +1072,14 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 15px;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
   /* default value */
   visibility: visible;
   /* default value */
   transition: opacity var(--trans-duration) var(--trans-func), visibility var(--trans-duration) var(--trans-func);
+  overflow-y: scroll;
 }
 
 .backdrop.is-hidden {
@@ -1041,13 +1088,24 @@ button {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+@media screen and (min-width: 480px) {
+  .backdrop {
+    padding: 93px 15px;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  height: 581px;
+  position: relative;
+  width: calc(100vw - 30px);
+  min-height: 609px;
   padding: 40px;
   box-sizing: border-box;
   background: var(--background-white-color);
@@ -1056,12 +1114,20 @@ button {
   transition: transform var(--trans-duration) var(--trans-func);
 }
 
-.backdrop {
-  overflow-y: scroll;
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .btn__close {
@@ -1086,10 +1152,16 @@ button {
 .modal__title {
   margin-bottom: 12px;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--nav-color);
+}
+
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    line-height: 1.15;
+  }
 }
 
 .form__label--input {
@@ -1157,6 +1229,13 @@ button {
   color: var(--placeholder-color);
 }
 
+@media screen and (max-width: 767px) {
+  .form__area::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+
 .check__field {
   display: block;
   padding-left: 12px;
@@ -1203,10 +1282,17 @@ button {
 
 .check__text {
   margin-left: 7px;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--text-color);
+}
+
+@media screen and (min-width: 1200px) {
+  .check__text {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .check__link {

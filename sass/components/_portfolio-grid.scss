@@ -1,15 +1,27 @@
 .portfolio__grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -30px;
-    margin-left: -30px;
+    margin: -15px;
+
+    @include media($tablet) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
 }
 
 .grid__item {
-    margin-top: 30px;
-    margin-left: 30px;
-    width: 370px;
-    height: 404px;
+    margin: 15px;
+    
+    @include media($mobile) {
+        width: var(--mobile-item-width);
+    }
+
+    @include media($tablet) {
+        width: calc(100%/2 - 30px);
+    }
+
+    @include media($desktop) {
+        width: calc(100%/3 - 30px);
+    }
 
     background-color: var(--background-white-color);
 }
@@ -54,10 +66,6 @@
     letter-spacing: 0.03em;
 }
 
-.grid__img {
-    display: block;
-}
-
 .img-wrap {
     position: relative;
 
@@ -77,7 +85,7 @@
 
     background-color: rgba(33, 150, 243, 0.9);
 
-    transform: translateY(100%);
+    transform: translateY(105%);
     transition-property: transform;
     transition-duration: var(--trans-duration);
     transition-timing-function: var(--trans-func);

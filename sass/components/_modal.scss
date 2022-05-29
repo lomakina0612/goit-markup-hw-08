@@ -1,11 +1,31 @@
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+body.modal-open{
+    overflow: hidden;
+}
 
-    width: 528px;
-    height: 581px;
+.modal {
+    position: relative;
+
+    width: calc(100vw - 30px);
+    min-height: 609px;   
+
+    @include media ($mobile) {
+        width: 450px; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+    }
+
+    @include media ($tablet) {
+        
+        
+        
+    }
+
+    @include media ($desktop) {       
+        width: 528px;
+        
+    }
     
     padding: 40px;
     box-sizing: border-box;
@@ -19,15 +39,6 @@
     transition: transform var(--trans-duration) var(--trans-func);
 }
 
-.backdrop {
-    overflow-y: scroll;
-
-    &.is-hidden {
-        .modal {
-            transform: translate(-50%, -50%) scale(0.9);
-        }
-    }
-}
 
 .btn__close {
     position: absolute;
@@ -57,9 +68,13 @@
     margin-bottom: 12px;
 
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.03em;
 
     color: var(--nav-color);
+
+    @include media ($desktop) {
+        line-height: 1.15;
+    }
 }
