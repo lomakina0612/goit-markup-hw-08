@@ -6,7 +6,9 @@ body.modal-open{
     position: relative;
 
     width: calc(100vw - 30px);
-    min-height: 609px;   
+    max-height: 609px;
+    height: 100%;   
+    overflow-y: scroll;
 
     @include media ($mobile) {
         width: 450px; 

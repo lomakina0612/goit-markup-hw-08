@@ -1105,7 +1105,9 @@ body.modal-open {
 .modal {
   position: relative;
   width: calc(100vw - 30px);
-  min-height: 609px;
+  max-height: 609px;
+  height: 100%;
+  overflow-y: scroll;
   padding: 40px;
   box-sizing: border-box;
   background: var(--background-white-color);
